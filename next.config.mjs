@@ -1,4 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import nextMdx from '@next/mdx'
 
-export default nextConfig;
+const withMDX = nextMdx();
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+};
+
+export default withMDX(nextConfig);
