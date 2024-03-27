@@ -67,20 +67,49 @@ export default function Navbar() {
 
     return (
         <div className="shadow-md">
-            <div className="container navbar bg-base-100">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <div
-                            tabIndex={0}
-                            role="button"
-                            className="btn btn-ghost lg:hidden"
-                        >
-                            <FontAwesomeIcon icon={faBars} fixedWidth />
+            <div className="container bg-base-100">
+                <div className="navbar">
+                    <div className="navbar-start">
+                        <div className="dropdown">
+                            <div
+                                tabIndex={0}
+                                role="button"
+                                className="btn btn-ghost lg:hidden"
+                            >
+                                <FontAwesomeIcon icon={faBars} fixedWidth />
+                            </div>
+                            <ul
+                                tabIndex={0}
+                                className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
+                            >
+                                <li>
+                                    <a>Home</a>
+                                </li>
+                                <li>
+                                    <a>Prompts</a>
+                                </li>
+                                <li>
+                                    <a>Community</a>
+                                    <ul className="p-2">
+                                        <li>
+                                            <a className="justify-between">
+                                                Discord
+                                                <div className="badge badge-accent badge-sm">
+                                                    New
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>Rankings</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
-                        <ul
-                            tabIndex={0}
-                            className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
-                        >
+                        <Logo />
+                    </div>
+                    <div className="navbar-center hidden lg:flex">
+                        <ul className="menu menu-horizontal px-1">
                             <li>
                                 <a>Home</a>
                             </li>
@@ -88,68 +117,44 @@ export default function Navbar() {
                                 <a>Prompts</a>
                             </li>
                             <li>
-                                <a>Community</a>
-                                <ul className="p-2">
-                                    <li>
-                                        <a className="justify-between">
-                                            Discord
-                                            <div className="badge badge-accent badge-sm">
-                                                New
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>Rankings</a>
-                                    </li>
-                                </ul>
+                                <details>
+                                    <summary>
+                                        Community
+                                        <div className="badge badge-accent badge-sm">
+                                            New
+                                        </div>
+                                    </summary>
+                                    <ul className="p-2">
+                                        <li>
+                                            <a className="justify-between">
+                                                Discord
+                                                <div className="badge badge-accent badge-sm">
+                                                    New
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>Rankings</a>
+                                        </li>
+                                    </ul>
+                                </details>
                             </li>
                         </ul>
                     </div>
-                    <Logo />
-                </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        <li>
-                            <a>Home</a>
-                        </li>
-                        <li>
-                            <a>Prompts</a>
-                        </li>
-                        <li>
-                            <details>
-                                <summary>
-                                    Community
-                                    <div className="badge badge-accent badge-sm">
-                                        New
-                                    </div>
-                                </summary>
-                                <ul className="p-2">
-                                    <li>
-                                        <a className="justify-between">
-                                            Discord
-                                            <div className="badge badge-accent badge-sm">
-                                                New
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>Rankings</a>
-                                    </li>
-                                </ul>
-                            </details>
-                        </li>
-                    </ul>
-                </div>
-                <div className="navbar-end gap-2">
-                    <button className="btn btn-circle btn-ghost">
-                        <FontAwesomeIcon icon={faMagnifyingGlass} fixedWidth />
-                    </button>
-                    <button className="btn btn-circle btn-ghost">
-                        <FontAwesomeIcon icon={faPen} fixedWidth />
-                    </button>
-                    {isAuthenticated
-                        ? authenticatedNavItems
-                        : unauthenticatedNavItems}
+                    <div className="navbar-end gap-2">
+                        <button className="btn btn-circle btn-ghost">
+                            <FontAwesomeIcon
+                                icon={faMagnifyingGlass}
+                                fixedWidth
+                            />
+                        </button>
+                        <button className="btn btn-circle btn-ghost">
+                            <FontAwesomeIcon icon={faPen} fixedWidth />
+                        </button>
+                        {isAuthenticated
+                            ? authenticatedNavItems
+                            : unauthenticatedNavItems}
+                    </div>
                 </div>
             </div>
         </div>
