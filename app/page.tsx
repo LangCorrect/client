@@ -3,6 +3,7 @@ import Navbar from './_components/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
+import Footer from './_components/Footer';
 
 function Section({ children }: { children: React.ReactNode }) {
     return (
@@ -218,6 +219,7 @@ export default function IndexPage() {
                 <FeaturesSection />
                 <CTASection />
             </main>
+            <Footer />
         </>
     );
 }
